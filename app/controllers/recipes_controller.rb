@@ -15,9 +15,6 @@ class RecipesController < ApplicationController
     @recipe.user = current_user
   end
 
-  # # GET /recipes/1/edit
-  # def edit; end
-
   # POST /recipes or /recipes.json
   def create
     @recipe = Recipe.new(recipe_params)
@@ -32,19 +29,6 @@ class RecipesController < ApplicationController
       end
     end
   end
-
-  # # PATCH/PUT /recipes/1 or /recipes/1.json
-  # def update
-  #   respond_to do |format|
-  #     if @recipe.update(recipe_params)
-  #       format.html { redirect_to recipe_url(@recipe), notice: 'Recipe was successfully updated.' }
-  #       format.json { render :show, status: :ok, location: @recipe }
-  #     else
-  #       format.html { render :edit, status: :unprocessable_entity }
-  #       format.json { render json: @recipe.errors, status: :unprocessable_entity }
-  #     end
-  #   end
-  # end
 
   # DELETE /recipes/1 or /recipes/1.json
   def destroy
