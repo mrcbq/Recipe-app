@@ -13,3 +13,73 @@
  *= require_tree .
  *= require_self
  */
+ @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+ * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+.flex-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.food-header {
+  max-width: 800px;
+  margin: auto;
+  padding: 30px 0;
+}
+
+.add-food-btn {
+  padding: 5px 10px;
+  border: 1px solid green;
+  border-radius: 3px;
+  color: green;
+  text-decoration: none;
+  background-color: rgb(219, 248, 219);
+}
+
+.table-container {
+  max-width: 800px;
+  margin: auto;
+  text-align: left;
+  border-collapse: collapse;
+}
+
+th {
+  background-color: rgb(231, 136, 101);
+}
+
+th, td {
+  border: 1px solid black;
+  padding: 10px 15px;
+}
+
+tr:nth-child(odd) {
+  background-color: rgb(247, 207, 192);
+}
+
+tr:nth-child(even) {
+  background-color: rgb(255, 226, 216);
+}
+
+.btn-delete {
+  border-radius: 3px;
+  border: 1px solid red;
+  color: red;
+  background-color: rgb(255, 206, 206);
+  padding: 4px 13px;
+  text-align: center;
+  width: 100%;
+}
