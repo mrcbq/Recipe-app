@@ -1,5 +1,5 @@
 class RecipeFoodsController < ApplicationController
-  before_action :set_recipe_food, only: %i[ destroy ]
+  before_action :set_recipe_food, only: %i[destroy]
 
   # GET /recipe_foods/new
   def new
@@ -29,7 +29,6 @@ class RecipeFoodsController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to recipe_path(@recipe), notice: 'Recipe food was successfully deleted.' }
-  
     end
   end
 
