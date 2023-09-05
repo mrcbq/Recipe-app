@@ -125,12 +125,19 @@ tr:nth-child(even) {
   text-decoration: none;
   color: inherit;
   padding: 1rem;
-  text-align: center;
+  /* text-align: center; */
+  margin: 0 auto;
+  width: 90%;
 }
 
 .recipes-name-n-btn {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  border: 1px solid black;
+  width: 80%;
+  margin: 2rem;
+  padding: 1rem;
+  text-align: center;
 }
 
 .recipes-name-n-btn div {
