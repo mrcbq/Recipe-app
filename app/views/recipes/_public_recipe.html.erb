@@ -1,0 +1,11 @@
+<div class="recipe-container flex-row">
+  <div class="flex-column public-recipe-title">
+    <h2><%= recipe.name %></h2>
+    <h4>By: <%= recipe.user.name %></h4>
+  </div>
+  <div class="flex-column public-recipe-info">
+    <p>Total food items: <strong><%= recipe.recipe_foods.size %></strong></p>
+    <p>Total price: <strong>$<%= calculate_total_price(recipe.recipe_foods) %></strong></p>
+    <%= link_to "See Recipe >", recipe, class: "see-btn"%>
+  </div>
+</div>

@@ -40,6 +40,10 @@ class RecipesController < ApplicationController
     end
   end
 
+  def public_recipes
+    @public_recipes = Recipe.includes(:user, :recipe_foods).where(public: true)
+  end
+
   private
 
   # Use callbacks to share common setup or constraints between actions.
