@@ -3,7 +3,9 @@ class RecipeFoodsController < ApplicationController
 
   # GET /recipe_foods/new
   def new
+    @recipe = Recipe.find(params[:recipe_id])
     @recipe_food = RecipeFood.new
+    @available_foods = Food.all
   end
 
   # POST /recipe_foods or /recipe_foods.json
