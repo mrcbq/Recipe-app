@@ -31,7 +31,7 @@
     <%= form.text_field :quantity %>
   </div>
 
-  <%= form.hidden_field :user_id, value: @user.id %>
+  <%= form.hidden_field :user_id, value: food.user.id %>
 
   <div>
     <%= form.submit %>
