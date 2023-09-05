@@ -18,7 +18,7 @@
 
   <div>
     <%= form.label :measurement_unit, style: "display: block" %>
-    <%= form.text_field :measurement_unit %>
+   <%= form.select :measurement_unit, ['Units', 'Kilogram (kg)', 'Gram (g)', 'Liter (l)', 'Milliliter (ml)' ] %>
   </div>
 
   <div>
@@ -31,7 +31,7 @@
     <%= form.text_field :quantity %>
   </div>
 
-  <%= form.hidden_field :user_id, value: @user.id %>
+  <%= form.hidden_field :user_id, value: food.user.id %>
 
   <div>
     <%= form.submit %>
