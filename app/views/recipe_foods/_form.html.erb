@@ -12,19 +12,16 @@
   <% end %>
 
   <div>
+    <%= form.label :food_id, style: "display: block" %>
+    <%= form.collection_select(:food_id, available_foods, :id, :name, {}, {}) %>
+  </div>
+
+  <div>
     <%= form.label :quantity, style: "display: block" %>
     <%= form.text_field :quantity %>
   </div>
 
-  <div>
-    <%= form.label :recipe_id, style: "display: block" %>
-    <%= form.text_field :recipe_id %>
-  </div>
-
-  <div>
-    <%= form.label :food_id, style: "display: block" %>
-    <%= form.text_field :food_id %>
-  </div>
+  <%= form.hidden_field :recipe_id, value: recipe.id %>
 
   <div>
     <%= form.submit %>
