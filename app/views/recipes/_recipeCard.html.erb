@@ -1,12 +1,15 @@
-<div id="<%= dom_id recipe %>">
+<div class="recipes-name-n-btn">
+
+  <div>
   <p>
     <%= recipe.name %>
   </p>
 
   <%= button_to "REMOVE", recipe, method: :delete %>
 
+  </div>
+
   <p>
-    <strong>Description:</strong>
     <%= recipe.description %>
   </p>
 
