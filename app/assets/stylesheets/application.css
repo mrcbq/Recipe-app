@@ -125,6 +125,7 @@ tr:nth-child(even) {
   text-decoration: none;
   color: inherit;
   padding: 1rem;
+
   /* text-align: center; */
   margin: 0 auto;
   width: 90%;
@@ -185,14 +186,13 @@ tr:nth-child(even) {
 }
 
 .send-button {
-  width: 100%;
   padding: 5px;
   width: 300px;
   font-size: 15px;
   font-weight: 600;
   background-color: rgb(248, 240, 219);
   border: 1px solid rgb(255, 171, 61);
-  color:rgb(255, 170, 60);
+  color: rgb(255, 170, 60);
 }
 
 .align-start {
