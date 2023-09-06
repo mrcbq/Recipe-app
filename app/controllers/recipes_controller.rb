@@ -47,6 +47,15 @@ class RecipesController < ApplicationController
     @public_recipes = Recipe.includes(:user, :recipe_foods).where(public: true)
   end
 
+  def toggle_public
+    @recipe = Recipe.find(params[:id])
+    @recipe.update(public: !@recipe.public)
+  
+    respond_to do |format|
+      format.json { render json: { public: @recipe.public } }
+    end
+  end
+
   private
 
   # Use callbacks to share common setup or constraints between actions.

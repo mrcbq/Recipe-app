@@ -9,7 +9,15 @@
     <%= recipe.preparation_time %>
   </p>
 
-  
+  <p>
+    <strong>Public:</strong>
+    <span id="public-status">
+      <%= recipe.public ? 'Yes' : 'No' %>
+    </span>
+    <button class="toggle-public-button" data-recipe-id="<%= recipe.id %>">
+      Toggle
+    </button>
+  </p>
 
   <p>
     <strong>Public:</strong>
@@ -27,3 +35,34 @@
   </p>
 
 </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const toggleButton = document.querySelector('.toggle-public-button');
+    const publicStatusElement = document.querySelector('#public-status');
+
+    toggleButton.addEventListener('click', function() {
+      const recipeId = this.getAttribute('data-recipe-id');
+
+      // Realizar una solicitud Ajax para cambiar el estado de 'public'
+      fetch(`/recipes/${recipeId}/toggle_public.json`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-CSRF-Token': '<%= form_authenticity_token %>'
+        }
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.public) {
+          publicStatusElement.textContent = 'Yes';
+        } else {
+          publicStatusElement.textContent = 'No';
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+    });
+  });
+</script>
