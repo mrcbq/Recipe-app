@@ -47,13 +47,16 @@ class RecipesController < ApplicationController
     @public_recipes = Recipe.includes(:user, :recipe_foods).where(public: true)
   end
 
+  # PATCH/PUT /recipes/1 or /recipes/1.json
+  def update
+    toggle_public
+  end
+
   def toggle_public
     @recipe = Recipe.find(params[:id])
     @recipe.update(public: !@recipe.public)
   
-    respond_to do |format|
-      format.json { render json: { public: @recipe.public } }
-    end
+    redirect_to recipe_url(@recipe), notice: 'Public status was successfully updated.'
   end
 
   private
