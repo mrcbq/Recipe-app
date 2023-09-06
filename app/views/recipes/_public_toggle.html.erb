@@ -1,4 +1,4 @@
 <%= form_for recipe, url: recipe_path(recipe), method: :patch do |f| %>
   <%= f.hidden_field :public, value: !recipe.public %>
-  <%= f.submit recipe.public ? 'Make Private' : 'Make Public', class: 'btn btn-primary', id:'toggle-button' %>
+  <%= f.submit recipe.public ? 'Make Private' : 'Make Public', class: 'send-button', id:'togle-button' %>
 <% end %>

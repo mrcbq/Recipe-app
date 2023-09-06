@@ -6,6 +6,6 @@
   <div class="flex-column public-recipe-info">
     <p>Total food items: <strong><%= recipe.recipe_foods.size %></strong></p>
     <p>Total price: <strong>$<%= calculate_total_price(recipe.recipe_foods) %></strong></p>
-    <%= link_to "See Recipe >", recipe, class: "see-btn"%>
+    <%= link_to "See Recipe >", recipe, class: "add-food-btn"%>
   </div>
 </div>
