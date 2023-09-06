@@ -121,6 +121,41 @@ tr:nth-child(even) {
   font-weight: 500;
 }
 
+#recipes > a {
+  text-decoration: none;
+  color: inherit;
+  padding: 1rem;
+
+  /* text-align: center; */
+  margin: 0 auto;
+  width: 90%;
+}
+
+.recipes-name-n-btn {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 1px solid black;
+  width: 80%;
+  margin: 2rem;
+  padding: 1rem;
+  text-align: center;
+}
+
+.recipes-name-n-btn div {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.recipes-name-n-btn div form button {
+  background: none;
+  border: none;
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 0;
+}
+
 .nav-container {
   padding: 20px 70px;
   background-color: rgb(127, 168, 255);
@@ -138,4 +173,47 @@ tr:nth-child(even) {
 .nav-link {
   color: black;
   text-decoration: none;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 700px;
+  gap: 15px;
+  margin: auto;
+}
+
+.send-button {
+  padding: 5px;
+  width: 300px;
+  font-size: 15px;
+  font-weight: 600;
+  background-color: rgb(248, 240, 219);
+  border: 1px solid rgb(255, 171, 61);
+  color: rgb(255, 170, 60);
+}
+
+.align-start {
+  align-items: flex-start;
+  gap: 5px;
+}
+
+.input-controll {
+  padding: 5px 10px;
+  width: 300px;
+}
+
+#toggle-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+#toggle-button:active {
+  background-color: #28a745;
 }

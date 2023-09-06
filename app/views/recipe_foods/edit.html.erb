@@ -1,10 +1,14 @@
-<h1>Editing recipe food</h1>
-
-<%= render "form", recipe_food: @recipe_food %>
-
-<br>
+<h1 class="title">Edit recipe food</h1>
 
 <div>
-  <%= link_to "Show this recipe food", @recipe_food %> |
-  <%= link_to "Back to recipe foods", recipe_foods_path %>
+    <%= form_with model: @recipe_food, url: recipe_food_path(@recipe_food), class: "form-container", method: :patch do |f| %>
+        <h2 class="">Editing: <%= @recipe_food.food.name %></h2>
+        <div class="flex-column align-start">
+            <%= f.label :quantity %>
+            <%= f.number_field :quantity, placeholder: 'New Quantity', class: "input-controll", min: 0 %>
+        </div>
+        <div>
+            <%= f.submit 'Edit', class: "send-button" %>
+        </div>
+    <% end %>
 </div>

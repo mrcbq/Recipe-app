@@ -4,10 +4,9 @@
 
 <div id="recipes">
   <% @recipes.each do |recipe| %>
-    <%= render recipe %>
-    <p>
-      <%= link_to "Show this recipe", recipe %>
-    </p>
+    <a href="<%= recipe_path(recipe) %>">
+      <%= render partial: 'recipeCard', locals: { recipe: recipe } %>
+    </a>
   <% end %>
 </div>
 
