@@ -1,5 +1,4 @@
 module FoodsHelper
-
   def calculate_total_items(recipe_foods)
     result = {}
 
@@ -13,7 +12,7 @@ module FoodsHelper
         result[element] = quantity
       end
     end
-  result
+    result
   end
 
   def calculate_food_totals(foods)
@@ -29,7 +28,7 @@ module FoodsHelper
         old_price = unit_price[element]
         old_quantity = result_quantity[element]
 
-        new_price = (old_price * old_quantity + price * quantity)/(quantity + old_quantity)
+        new_price = ((old_price * old_quantity) + (price * quantity)) / (quantity + old_quantity)
 
         result_quantity[element] += quantity
         unit_price[element] = new_price.round(2)
@@ -38,7 +37,7 @@ module FoodsHelper
         unit_price[element] = price
       end
     end
-  [result_quantity, unit_price]
+    [result_quantity, unit_price]
   end
 
   def calculate_totals_needed(inventory, needs)
@@ -46,8 +45,8 @@ module FoodsHelper
     needs.each do |element, quantity|
       inventory_quantity = inventory[element] || 0
       need_quantity = quantity - inventory_quantity
-      shop[element] = need_quantity if need_quantity > 0
-    end  
+      shop[element] = need_quantity if need_quantity.positive?
+    end
     shop
   end
 
@@ -56,6 +55,6 @@ module FoodsHelper
     shop.each do |element, quantity|
       total += price[element] * quantity
     end
-  total
+    total
   end
 end

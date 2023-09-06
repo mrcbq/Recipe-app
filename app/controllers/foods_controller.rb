@@ -41,7 +41,6 @@ class FoodsController < ApplicationController
     @prices = @array[1]
 
     @shop = helpers.calculate_totals_needed(@inventory, @needs)
-
   end
 
   private
