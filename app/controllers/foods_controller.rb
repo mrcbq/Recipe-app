@@ -30,6 +30,19 @@ class FoodsController < ApplicationController
     end
   end
 
+  def general_shopping_list
+    @recipes = Recipe.where(user: current_user)
+    @recipe_foods = RecipeFood.where(recipe: @recipes)
+    @foods = Food.where(user: current_user)
+
+    @needs = helpers.calculate_total_items(@recipe_foods)
+    @array = helpers.calculate_food_totals(@foods)
+    @inventory = @array[0]
+    @prices = @array[1]
+
+    @shop = helpers.calculate_totals_needed(@inventory, @needs)
+  end
+
   private
 
   # Use callbacks to share common setup or constraints between actions.
