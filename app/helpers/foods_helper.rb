@@ -51,4 +51,11 @@ module FoodsHelper
     shop
   end
 
+  def calculate_price(shop, price)
+    total = 0
+    shop.each do |element, quantity|
+      total += price[element] * quantity
+    end
+  total
+  end
 end
