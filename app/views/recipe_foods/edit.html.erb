@@ -1,7 +1,7 @@
 <h1>Editing recipe food</h1>
 
 <div class="flex justify-center w-full">
-    <%= form_with model: @recipe_food, url: recipe_recipe_food_path(@recipe_food), method: :patch do |f| %>
+    <%= form_with model: @recipe_food, url: recipe_food_path(@recipe_food), method: :patch do |f| %>
         <h1 class="title"> <%= @recipe_food.food.name %></h1>
         <div>
             <%= f.label :quantity %>
