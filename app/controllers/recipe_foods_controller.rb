@@ -52,7 +52,7 @@ class RecipeFoodsController < ApplicationController
   def update_recipe_food_params
     params.require(:recipe_food).permit(:quantity)
   end
-  
+
   # Use callbacks to share common setup or constraints between actions.
   def set_recipe_food
     @recipe_food = RecipeFood.find(params[:id])
