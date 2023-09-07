@@ -3,7 +3,8 @@ require 'rails_helper'
 RSpec.describe 'food/index', type: :system do
   describe 'index page' do
     let!(:user) do
-      User.create(name: 'nacho', email: 'nachofino98@gmail.com', password: 'nachofino1', password_confirmation: 'nachofino1')
+      User.create(name: 'nacho', email: 'nachofino98@gmail.com', password: 'nachofino1',
+                  password_confirmation: 'nachofino1')
     end
 
     let!(:food1) do

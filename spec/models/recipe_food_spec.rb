@@ -3,8 +3,10 @@ require 'rails_helper'
 RSpec.describe RecipeFood, type: :model do
   let!(:user) { User.create(name: 'Nacho') }
   let!(:food) { Food.create(name: 'Milk', measurement_unit: 'Litter', price: 3.0, quantity: 5) }
-  let!(:recipe) { Recipe.create(name: 'Cake', preparation_time: 50, cooking_time: 30, description: 'Cake',
-    user_id: user.id, public: true) }
+  let!(:recipe) do
+    Recipe.create(name: 'Cake', preparation_time: 50, cooking_time: 30, description: 'Cake',
+                  user_id: user.id, public: true)
+  end
   let!(:recipe_food) { RecipeFood.new(food:, recipe:, quantity: 3) }
 
   context 'Validation' do
