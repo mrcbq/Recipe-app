@@ -1,11 +1,13 @@
 class RecipeFoodsController < ApplicationController
   before_action :set_recipe_food, only: %i[destroy]
+  before_action :authenticate_user!
+  load_and_authorize_resource
 
   # GET /recipe_foods/new
   def new
     @recipe = Recipe.find(params[:recipe_id])
     @recipe_food = RecipeFood.new
-    @available_foods = Food.all
+    @available_foods = Food.where(user: current_user)
   end
 
   # POST /recipe_foods or /recipe_foods.json
