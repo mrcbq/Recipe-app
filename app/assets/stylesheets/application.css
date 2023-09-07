@@ -51,6 +51,7 @@ body {
 
 .food-header {
   max-width: 800px;
+  width: 50%;
   margin: auto;
   padding: 30px 0;
 }
@@ -66,6 +67,7 @@ body {
 
 .table-container {
   max-width: 800px;
+  width: 50%;
   margin: auto;
   text-align: left;
   border-collapse: collapse;
@@ -79,6 +81,7 @@ th,
 td {
   border: 1px solid black;
   padding: 10px 15px;
+  white-space: nowrap;
 }
 
 tr:nth-child(odd) {
@@ -244,7 +247,10 @@ form {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  
+}
+
+.button_to {
+  padding: 0;
 }
 
 input {
@@ -274,13 +280,14 @@ input:focus {
   margin-top: 10px;
 }
 
-.field > em {
+.field > em,
+.field > i {
   color: rgb(92, 92, 255);
 }
 
 .form-link {
   display: inline-block;
-  margin: auto;
+  margin: 5px auto;
   color: rgb(92, 92, 255);
   text-decoration: none;
 }
@@ -302,3 +309,18 @@ input:focus {
   margin-right: 10px;
 }
 
+.error_explanation,
+.alert {
+  text-align: center;
+  color: red;
+}
+
+.cancel-link {
+  padding: 5px;
+  border: 1px solid rgb(92, 92, 255);
+  border-radius: 5px;
+  color: rgb(92, 92, 255);
+  background-color: transparent;
+  align-self: center;
+  margin-top: 5px;
+}
