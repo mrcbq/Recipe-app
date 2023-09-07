@@ -7,4 +7,9 @@ class User < ApplicationRecord
   has_many :foods
 
   validates :name, presence: true, length: { maximum: 100 }
+
+  def admin?
+    role == 'admin'
+  end
+  
 end
