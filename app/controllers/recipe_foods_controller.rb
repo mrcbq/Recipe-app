@@ -1,5 +1,7 @@
 class RecipeFoodsController < ApplicationController
   before_action :set_recipe_food, only: %i[destroy]
+  before_action :authenticate_user!
+  load_and_authorize_resource
 
   # GET /recipe_foods/new
   def new
@@ -12,6 +14,8 @@ class RecipeFoodsController < ApplicationController
   def create
     @recipe_food = RecipeFood.new(recipe_food_params)
     @recipe = @recipe_food.recipe
+
+    authorize! :create, @recipe
 
     respond_to do |format|
       if @recipe_food.save
