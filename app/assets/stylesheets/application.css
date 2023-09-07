@@ -275,7 +275,8 @@ form {
 }
 
 input,
-select {
+select, 
+textarea {
   padding: 5px 10px;
   border: 2px solid rgb(92, 92, 255);
   border-radius: 5px;
@@ -293,7 +294,8 @@ input:focus {
   border-color: rgb(92, 92, 255);
 }
 
-.submit-button {
+.submit-button,
+input[type="submit"] {
   border: none;
   background-color: rgb(92, 92, 255);
   font-weight: 600;
