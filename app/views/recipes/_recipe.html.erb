@@ -9,10 +9,12 @@
     <%= recipe.preparation_time %>
   </p>
 
-  <p>
-    <strong>Public:</strong>
-    <%= render partial: 'recipes/public_toggle', locals: { recipe: recipe } %>
-  </p>
+  <% if can? :edit, recipe %>
+    <p>
+      <strong>Public:</strong>
+      <%= render partial: 'recipes/public_toggle', locals: { recipe: recipe } %>
+    </p>
+  <% end %>
 
   <p>
     <strong>Cooking time:</strong>
