@@ -1,20 +1,17 @@
-<div id="<%= dom_id recipe %>">
-  <p>
-    <strong>Name:</strong>
+<div id="<%= dom_id recipe %>" class="recipe-show-container">
+  <h1 class="align-center">
     <%= recipe.name %>
-  </p>
+  </h2>
 
-  <p>
-    <strong>Preparation time:</strong>
-    <%= recipe.preparation_time %>
-  </p>
-
-  <% if can? :edit, recipe %>
-    <p>
-      <strong>Public:</strong>
-      <%= render partial: 'recipes/public_toggle', locals: { recipe: recipe } %>
+  <div class="flex-row recipe-section-1">
+    <p class="flex-1">
+      <strong>Preparation time:</strong>
+      <%= recipe.preparation_time %>
     </p>
-  <% end %>
+    <% if can? :edit, recipe %>
+        <%= render partial: 'recipes/public_toggle', locals: { recipe: recipe } %>
+    <% end %>
+  </div>
 
   <p>
     <strong>Cooking time:</strong>

@@ -1,12 +1,14 @@
-<p style="color: green"><%= notice %></p>
+<p class="notice"><%= notice %></p>
 
 <%= render @recipe %>
-
-<div>
+<hr>
+<div class="recipe-section-2">
   
-  <%= link_to 'Generate shopping list', general_shopping_list_path, class: "add-food-btn" %>
+  <div class="recipe-actions">
+    <%= link_to 'Generate shopping list', general_shopping_list_path, class: "add-food-btn recipe-action" %>
 
-  <%= link_to 'Add ingredient', new_recipe_food_path(recipe_id: @recipe.id), class: "add-food-btn" if can? :edit, @recipe %>
+    <%= link_to 'Add ingredient', new_recipe_food_path(recipe_id: @recipe.id), class: "add-food-btn recipe-action" if can? :edit, @recipe %>
+  </div>
 
 
   <table>
@@ -24,9 +26,9 @@
         <td><%= recipe_food.food.name %></td>
         <td><%= recipe_food.quantity %> <%= recipe_food.food.measurement_unit %></td>
         <td>$ <%= recipe_food.quantity * recipe_food.food.price %></td>
-        <td>
-          <%= link_to 'Modify', edit_recipe_food_path(recipe_food), class: "send-button" if can? :edit, recipe_food %> 
-          <%= button_to 'Remove', recipe_food_path(recipe_food), method: :delete, data: { confirm: 'Are you sure?' } if can? :destroy, recipe_food %>
+        <td class="recipe-food-actions">
+          <%= link_to 'Modify', edit_recipe_food_path(recipe_food), class: "modify-button" if can? :edit, recipe_food %> 
+          <%= button_to 'Remove', recipe_food_path(recipe_food), class: "btn-delete", method: :delete, data: { confirm: 'Are you sure?' } if can? :destroy, recipe_food %>
         </td>
       </tr>
     <% end %>
@@ -35,7 +37,7 @@
 
 
 
-  <%= link_to "Back to recipes", recipes_path, class: "add-food-btn" %>
+  <%= link_to "Back to recipes", recipes_path, class: "add-food-btn recipe-action" %>
 
-  <%= button_to "Destroy this recipe", @recipe, method: :delete if can? :destroy, @recipe %>
+  <%= button_to "Destroy this recipe", @recipe, class: "btn-delete", method: :delete if can? :destroy, @recipe %>
 </div>
