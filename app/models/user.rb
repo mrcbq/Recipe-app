@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  before_destroy :delete_associated_recipes_and_foods
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -11,5 +12,9 @@ class User < ApplicationRecord
   def admin?
     role == 'admin'
   end
-  
+
+  def delete_associated_recipes_and_foods
+    recipes.destroy_all
+    foods.destroy_all
+  end
 end
