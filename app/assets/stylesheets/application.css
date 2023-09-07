@@ -168,10 +168,6 @@ tr:nth-child(even) {
   font-size: 17px;
 }
 
-.remove-recipe {
-  font-size: 15px;
-}
-
 .recipes-name-n-btn > div {
   display: flex;
   flex-direction: column;
@@ -181,6 +177,7 @@ tr:nth-child(even) {
 }
 
 .remove-recipe {
+  font-size: 15px;
   background: none;
   border: none;
   color: blue;
@@ -275,7 +272,7 @@ form {
 }
 
 input,
-select, 
+select,
 textarea {
   padding: 5px 10px;
   border: 2px solid rgb(92, 92, 255);
@@ -386,7 +383,6 @@ input[type="submit"] {
 [id^="edit_recipe_"] {
   margin: 0;
   padding: 0;
-
 }
 
 .align-end {
@@ -411,7 +407,8 @@ input[type="submit"] {
 
 .recipe-action {
   display: inline-block;
-  width: auto;align-self: center;
+  width: auto;
+  align-self: center;
 }
 
 .recipe-food-actions {
