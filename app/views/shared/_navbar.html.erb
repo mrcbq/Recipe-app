@@ -7,7 +7,7 @@
       <li class="nav-item"><%= link_to 'Public Recipes', public_recipes_path, class: "nav-link"%></li>
       <li class="nav-item"><%= link_to 'My Recipes', recipes_path, class: "nav-link"%></li>
       <li class="nav-item"><%= link_to 'Shopping List', general_shopping_list_path, class: "nav-link" %></li>
-      <li class="nav-item"><%= link_to "Profile", edit_user_registration_path, class: "nav-link" %></li>
+      <li class="nav-item"><%= link_to "Profile", edit_user_registration_path, class: "nav-link sign-out" %></li>
       <li class="nav-item"><%= link_to "Log out", custom_destroy_user_session_path, method: :delete, class: "nav-link sign-out" %></li>
     <% else %>
       <li class="nav-item"><%= link_to "Login", new_user_session_path %></li>
