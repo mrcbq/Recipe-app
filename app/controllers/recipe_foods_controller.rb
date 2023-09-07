@@ -7,15 +7,13 @@ class RecipeFoodsController < ApplicationController
   def new
     @recipe = Recipe.find(params[:recipe_id])
     @recipe_food = RecipeFood.new
-    @available_foods = Food.all
+    @available_foods = Food.where(user: current_user)
   end
 
   # POST /recipe_foods or /recipe_foods.json
   def create
     @recipe_food = RecipeFood.new(recipe_food_params)
     @recipe = @recipe_food.recipe
-
-    authorize! :create, @recipe
 
     respond_to do |format|
       if @recipe_food.save
