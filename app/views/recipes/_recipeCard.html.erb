@@ -1,11 +1,11 @@
 <div class="recipes-name-n-btn">
 
   <div>
-  <p>
+  <h2>
     <%= recipe.name %>
-  </p>
+  </h2>
 
-  <%= button_to "REMOVE", recipe, method: :delete %>
+  <%= button_to "REMOVE", recipe, method: :delete, class: "remove-recipe" %>
 
   </div>
 
