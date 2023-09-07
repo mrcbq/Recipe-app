@@ -2,7 +2,7 @@ module FoodsHelper
   def calculate_total_items(recipe_foods)
     result = {}
 
-    recipe_foods.each do |recipe_food|
+    recipe_foods.includes([:food]).each do |recipe_food|
       element = recipe_food.food.name
       quantity = recipe_food.quantity
 

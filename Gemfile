@@ -75,3 +75,5 @@ end
 gem 'devise', '~> 4.9'
 
 gem 'cancancan', '~> 3.5'
+
+gem 'bullet', '~> 7.0', group: :development
