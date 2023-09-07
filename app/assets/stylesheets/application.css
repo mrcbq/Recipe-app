@@ -22,6 +22,12 @@
   font-family: 'Roboto', sans-serif;
 }
 
+body {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+}
+
 .flex-row {
   display: flex;
   align-items: center;
@@ -225,3 +231,74 @@ tr:nth-child(even) {
 #toggle-button:active {
   background-color: #28a745;
 }
+
+.form-title {
+  color: rgb(92, 92, 255);
+  text-align: center;
+  margin-top: 40px;
+}
+
+form {
+  padding: 20px 50px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  
+}
+
+input {
+  padding: 5px 10px;
+  border: 2px solid rgb(92, 92, 255);
+  border-radius: 5px;
+  outline: none;
+  width: 100%;
+  min-width: 300px;
+}
+
+label {
+  color: rgb(92, 92, 255);
+  font-weight: 600;
+}
+
+input:focus {
+  border-color: rgb(92, 92, 255);
+}
+
+.submit-button {
+  border: none;
+  background-color: rgb(92, 92, 255);
+  font-weight: 600;
+  color: white;
+  padding: 8px;
+  margin-top: 10px;
+}
+
+.field > em {
+  color: rgb(92, 92, 255);
+}
+
+.form-link {
+  display: inline-block;
+  margin: auto;
+  color: rgb(92, 92, 255);
+  text-decoration: none;
+}
+
+.form-link::before {
+  content: "* ";
+}
+
+.field.remember-me {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: flex-start;
+}
+
+.input-checkbox {
+  width: 20px;
+  min-width: 0;
+  margin-right: 10px;
+}
+
