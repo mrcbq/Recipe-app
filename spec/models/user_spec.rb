@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  let!(:user) { User.create(name: 'John') }
+  let!(:user) { User.create(name: 'John', name: "John", email: "jhon@jhon.com", password: "111111") }
 
   context 'Validation' do
     it 'should be valid with valid attributes' do
@@ -17,33 +17,17 @@ RSpec.describe User, type: :model do
       user.name = 'x' * 101
       expect(user).to_not be_valid
     end
-
-    it 'must include a preparation_time' do
-      user.preparation_time = nil
-      expect(user).to_not be_valid
-    end
-
-    it 'must include a cooking_time' do
-      user.cooking_time = nil
-      expect(user).to_not be_valid
-    end
-
-    it 'must include a description' do
-      user.description = nil
-      expect(user).to_not be_valid
-    end
   end
 
   context 'Associations' do
-    it 'should belong to a user' do
-      association = described_class.reflect_on_association(:user)
-      expect(association.macro).to eq(:belongs_to)
+    it 'should have many recipes' do
+      association = described_class.reflect_on_association(:recipes)
+      expect(association.macro).to eq(:has_many)
     end
 
     it 'should have many recipe_foods' do
-      association = described_class.reflect_on_association(:recipe_foods)
+      association = described_class.reflect_on_association(:foods)
       expect(association.macro).to eq(:has_many)
-      expect(association.options[:dependent]).to eq(:destroy)
     end
   end
 end
