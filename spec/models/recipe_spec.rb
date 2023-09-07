@@ -2,7 +2,10 @@ require 'rails_helper'
 
 RSpec.describe Recipe, type: :model do
   let!(:user) { User.create(name: 'John') }
-  let!(:recipe) { Recipe.new(name: 'Chocolate', preparation_time: '2', cooking_time: '3', description: 'A delicious beverage', public: true, user:) }
+  let!(:recipe) do
+    Recipe.new(name: 'Chocolate', preparation_time: '2', cooking_time: '3', description: 'A delicious beverage',
+               public: true, user:)
+  end
 
   context 'Validation' do
     it 'should be valid with valid attributes' do
