@@ -1,6 +1,6 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Recipes</h1>
+<h1 class="title">Recipes</h1>
 
 <div id="recipes">
   <% @recipes.each do |recipe| %>
@@ -10,4 +10,4 @@
   <% end %>
 </div>
 
-<%= link_to "New recipe", new_recipe_path, class: "add-food-btn" %>
+<%= link_to "New recipe", new_recipe_path, class: "add-food-btn align-center" %>

@@ -31,14 +31,13 @@
     <%= form.text_area :description %>
   </div>
 
-  <div>
-    <%= form.label :public, style: "display: block" %>
-    <%= form.check_box :public %>
+  <div class="field remember-me">
+    <%= form.check_box :public, class: "input-checkbox" %>
+    <%= form.label :public, class: "label-checkbox" %>
   </div>
 
   <div>
-    <%= form.label :user_id, style: "display: block" %>
-    <%= form.text_field :user_id %>
+    <%= form.hidden_field :user_id, value: current_user.id %>
   </div>
 
   <div>
