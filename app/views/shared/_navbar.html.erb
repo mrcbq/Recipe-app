@@ -1,0 +1,20 @@
+<header class="nav-container flex-row">
+  <h2 class="nav-title">Recipes App</h2>
+  <nav class="nav">
+    <ul class="nav-list flex-row">
+    <% if user_signed_in? %>
+      <li class="nav-item"><%= link_to 'My Inventory', foods_path, class: "nav-link"%></li>
+      <li class="nav-item"><%= link_to 'Public Recipes', public_recipes_path, class: "nav-link"%></li>
+      <li class="nav-item"><%= link_to 'My Recipes', recipes_path, class: "nav-link"%></li>
+      <li class="nav-item"><%= link_to 'Shopping List', general_shopping_list_path, class: "nav-link" %></li>
+      <li class="nav-item"><%= link_to "Profile", edit_user_registration_path, class: "nav-link sign-out" %></li>
+      <li class="nav-item"><%= link_to "Log out", custom_destroy_user_session_path, method: :delete, class: "nav-link sign-out" %></li>
+    <% else %>
+      <li class="nav-item"><%= link_to "Login", new_user_session_path, class: "nav-link" %></li>
+      <li class="nav-item"><%= link_to "Sign Up", new_user_registration_path, class: "nav-link" %></li>
+    <% end %>
+    </div>
+
+    </ul>
+  </nav>
+</header>

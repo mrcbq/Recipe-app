@@ -1,0 +1,27 @@
+<h1 class="title">General Shopping List</h1>
+
+<div class="shopping-container">
+  <div class="flex-row">
+    <p>Amount of food items to buy: <%= @shop.length %></p>
+    <p>Total value of food needed: <%= calculate_price(@shop, @prices) %></p>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Food</th>
+        <th>Quantity</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @shop.each do |element, quantity| %>
+        <tr>
+          <td><%= element %></td>
+          <td><%= quantity %> <%= @foods.find_by(name: element).measurement_unit %></td>
+          <td>$ <%= @prices[element] * quantity %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,26 @@
+<div id="<%= dom_id recipe %>" class="recipe-show-container">
+  <h1 class="align-center">
+    <%= recipe.name %>
+  </h2>
+
+  <div class="flex-row recipe-section-1">
+    <p class="flex-1">
+      <strong>Preparation time:</strong>
+      <%= recipe.preparation_time %>
+    </p>
+    <% if can? :edit, recipe %>
+        <%= render partial: 'recipes/public_toggle', locals: { recipe: recipe } %>
+    <% end %>
+  </div>
+
+  <p>
+    <strong>Cooking time:</strong>
+    <%= recipe.cooking_time %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= recipe.description %>
+  </p>
+
+</div>

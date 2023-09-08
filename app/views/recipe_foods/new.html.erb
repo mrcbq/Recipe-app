@@ -1,0 +1,9 @@
+<h1 class="form-title">New recipe food</h1>
+
+<%= render "form", recipe_food: @recipe_food, recipe: @recipe, available_foods: @available_foods %>
+
+<br>
+
+<div class="align-center">
+  <%= link_to "Back to recipe", recipe_path(@recipe), class: "form-link" %>
+</div>

@@ -1,0 +1,16 @@
+<div class="recipes-name-n-btn">
+
+  <div>
+  <h2>
+    <%= recipe.name %>
+  </h2>
+
+  <%= button_to "REMOVE", recipe, method: :delete, class: "remove-recipe" %>
+
+  </div>
+
+  <p>
+    <%= recipe.description %>
+  </p>
+
+</div>
